@@ -1,0 +1,31 @@
+{
+  "name": "wi-log",
+  "version": "1.0.0",
+  "description": "wi-log client for publishing logs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sockyone/wi-log.git"
+  },
+  "keywords": [
+    "log",
+    "rabbitmq"
+  ],
+  "author": "Nam Phan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sockyone/wi-log/issues"
+  },
+  "homepage": "https://github.com/sockyone/wi-log#readme",
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "mqtt": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "moment-timezone": "^0.5.27",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.4.6"
+  }
+}
