@@ -1,5 +1,5 @@
 {
-  "name": "wi-log",
+  "name": "wi-logger",
   "version": "1.0.0",
   "description": "wi-log client for publishing logs",
   "main": "index.js",

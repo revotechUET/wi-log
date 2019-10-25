@@ -24,3 +24,4 @@ let WiLog = require('./src/Wilog.class');
 let wiLog = new WiLog("D:/code/logs");
 
 wiLog.info("Hello world!");
+wiLog.error("Hello World!");

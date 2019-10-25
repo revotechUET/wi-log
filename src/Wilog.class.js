@@ -18,23 +18,21 @@ class WiLog {
     constructor(rootFolder) {
         this.logger = new (logger.Logger)({
             transports: [
-                getRotateDailyLog('error', rootFolder),
-                getRotateDailyLog('info', rootFolder),
-                getRotateDailyLog('warn', rootFolder)
+                getRotateDailyLog('info', rootFolder)
             ]
         });
     }
 
     info(obj) {
-        this.logger.info(obj);
+        this.logger.info(Object.assign(obj, {level: "info"}));
     }
 
     error(obj) {
-        this.logger.error(obj);
+        this.logger.info(Object.assign(obj, {level: "error"}));
     }
 
     warn(obj) {
-        this.logger.warn(obj);
+        this.logger.info(Object.assign(obj, {level: "warn"}));
     }
 }
 
