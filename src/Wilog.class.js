@@ -16,23 +16,42 @@ mkdirp('logs', function (err) {
 
 class WiLog {
     constructor(rootFolder) {
-        this.logger = new (logger.Logger)({
+        this.errorLogger = new (logger.Logger)({
+            transports: [
+                getRotateDailyLog('error', rootFolder)
+            ]
+        });
+        this.infoLogger = new (logger.Logger)({
             transports: [
                 getRotateDailyLog('info', rootFolder)
+            ]
+        });
+        this.warnLogger = new (logger.Logger)({
+            transports: [
+                getRotateDailyLog('warn', rootFolder)
+            ]
+        });
+        this.successLogger = new (logger.Logger)({
+            transports: [
+                getRotateDailyLog('success', rootFolder)
             ]
         });
     }
 
     info(obj) {
-        this.logger.info(Object.assign(obj, {level: "info"}));
+        this.infoLogger.info(obj);
     }
 
     error(obj) {
-        this.logger.info(Object.assign(obj, {level: "error"}));
+        this.errorLogger.error(obj);
     }
 
     warn(obj) {
-        this.logger.info(Object.assign(obj, {level: "warn"}));
+        this.warnLogger.warn(obj);
+    }
+
+    success(obj) {
+        this.successLogger.success(obj);
     }
 }
 
@@ -40,8 +59,8 @@ function getRotateDailyLog(logLevel, filePath) {
     return new (logger.transports.DailyRotateFile)({
         filename: filePath + '/' + './' + logLevel + '.log',
         datePattern: 'yyyy-MM-dd.',
-        prepend: true,
         level: logLevel,
+        prepend: true,
         name: logLevel + '-logger',
         maxFiles: 15,
         timestamp() {

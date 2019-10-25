@@ -21,7 +21,8 @@
 
 let WiLog = require('./src/Wilog.class');
 
-let wiLog = new WiLog("D:/code/logs");
+let wiLog = new WiLog("./logs");
 
-wiLog.info("Hello world!");
-wiLog.error("Hello World!");
+// wiLog.info({message: "Hello word"});
+wiLog.error({message: "Hello word"});
+wiLog.info({message: "hello"});
