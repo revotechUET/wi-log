@@ -51,7 +51,7 @@ class WiLog {
     }
 
     success(obj) {
-        this.successLogger.success(obj);
+        this.successLogger.info(obj);
     }
 }
 

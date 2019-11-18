@@ -1,6 +1,6 @@
 {
   "name": "wi-logger",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "wi-log client for publishing logs",
   "main": "index.js",
   "scripts": {
