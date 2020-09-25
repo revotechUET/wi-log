@@ -39,18 +39,22 @@ class WiLog {
     }
 
     info(obj) {
+		console.log("__WILOG__", JSON.stringify(obj));
         this.infoLogger.info(obj);
     }
 
     error(obj) {
+		console.log("__WILOG__", JSON.stringify(obj));
         this.errorLogger.error(obj);
     }
 
     warn(obj) {
+		console.log("__WILOG__", JSON.stringify(obj));
         this.warnLogger.warn(obj);
     }
 
     success(obj) {
+		console.log("__WILOG__", JSON.stringify(obj));
         this.successLogger.info(obj);
     }
 }
